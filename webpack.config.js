@@ -1,10 +1,12 @@
 const path = require('path');
 
 module.exports = {
-    mode: 'development',
+    // production mode or development
+    mode: 'production',
     entry: path.resolve(__dirname, 'src', 'index.js'),
     output: {
-        filename: "bundle.js",
+        filename: "[name].[contenthash].js", // content has for making new hashed element
         path: path.resolve(__dirname, 'build'),
+        clean: true
     },
 };
