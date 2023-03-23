@@ -1,8 +1,10 @@
-import { render } from "react-dom";
+import {render} from "react-dom";
+import App from "./App";
+import {BrowserRouter} from "react-router-dom";
 
 render(
-    <div>
-        <h1>Hello world</h1>
-    </div>,
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>,
     document.getElementById('root')
 )

@@ -1,1 +1,0 @@
-(()=>{"use strict";document.getElementById("root").innerHTML='<h1 style="color: crimson">Hello world from webpack dev  server</h1>',console.log("Hello world"),console.log("Hell o world one more time ")})();
