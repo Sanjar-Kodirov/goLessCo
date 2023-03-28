@@ -1,9 +1,14 @@
 // main light : #eeedef
 // text color: #010001
 
-.app {
+:root {
     --bg-color: #eeedef;
+    --inverted-bg-color: #24293e;
 
     --primary-color: #1c181c;
     --secondary-color: #fffffe;
+    // inverted color 
+    --inverted-primary-color: #fffffe;
+    --inverted-secondary-color: #8ebbff;
+
 }
