@@ -14,8 +14,8 @@ interface ThemeSwitcherProps {
 }
 
 export const ThemeSwitcher: FC = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false)
     const { theme, toggleTheme } = useTheme()
+    const [isDarkMode, setIsDarkMode] = useState(theme == Theme.LIGHT ? false : true)
 
     function toggleThemeHandler() {
         setIsDarkMode(!isDarkMode)
@@ -27,8 +27,11 @@ export const ThemeSwitcher: FC = () => {
         //     {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
         // </button>
         <DayNightToggle
+            size={30}
+            shadows={true}
             onChange={() => toggleThemeHandler()}
             checked={isDarkMode}
+            animationInactive={false}
         />
     )
 }

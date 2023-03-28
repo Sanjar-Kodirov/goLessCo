@@ -6,12 +6,16 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from 'app/providers/routes';
 import { Link } from 'react-router-dom';
 import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from 'widgets/Sidebar';
 const App = () => {
     const { theme, toggleTheme } = useTheme()
     return (
         <div className={classNames('app', {}, [theme])}>
             <Navbar />
-            <AppRouter />
+            <div className='content-page'>
+                <Sidebar />
+                <AppRouter />
+            </div>
         </div>
     );
 };
