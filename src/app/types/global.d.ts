@@ -16,4 +16,5 @@ declare module '*.svg' {
     export default SVG;
 }
 
-declare const  __IS_DEV__: boolean;
+// eslint-disable-next-line no-unused-vars
+declare const __IS_DEV__: boolean;

@@ -1,12 +1,9 @@
-
-import { FC, useState } from "react"
-import DayNightToggle from 'react-day-and-night-toggle'
-import { classNames } from "shared/lib/classNames/classNames"
-import cls from './ThemeSwitcher.module.scss'
-import { useTheme, Theme } from "app/providers/ThemeProvider"
+import { FC, useState } from 'react';
+import DayNightToggle from 'react-day-and-night-toggle';
+import { useTheme, Theme } from 'app/providers/ThemeProvider';
 // props
-import LightIcon from 'shared/assets/icons/earth-light.svg'
-import DarkIcon from 'shared/assets/icons/earth-dark.svg'
+
+import cls from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
     className?: string;
@@ -14,12 +11,12 @@ interface ThemeSwitcherProps {
 }
 
 export const ThemeSwitcher: FC = () => {
-    const { theme, toggleTheme } = useTheme()
-    const [isDarkMode, setIsDarkMode] = useState(theme == Theme.LIGHT ? false : true)
+    const { theme, toggleTheme } = useTheme();
+    const [isDarkMode, setIsDarkMode] = useState(theme !== Theme.LIGHT);
 
     function toggleThemeHandler() {
-        setIsDarkMode(!isDarkMode)
-        toggleTheme()
+        setIsDarkMode(!isDarkMode);
+        toggleTheme();
     }
 
     return (
@@ -27,11 +24,12 @@ export const ThemeSwitcher: FC = () => {
         //     {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
         // </button>
         <DayNightToggle
+            className={cls.themeSwitcher}
             size={30}
-            shadows={true}
+            shadows
             onChange={() => toggleThemeHandler()}
             checked={isDarkMode}
             animationInactive={false}
         />
-    )
-}
+    );
+};

@@ -1,11 +1,11 @@
-import { Suspense } from 'react'
-import { Route, Routes } from 'react-router-dom'
-import { AboutPage } from 'pages/AboutPage'
-import { MainPage } from 'pages/MainPage'
-import { RouteConfig } from 'shared/config/routeConfig/routerConfig'
-export function AppRouter() {
+import { Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { AboutPage } from 'pages/AboutPage';
+import { MainPage } from 'pages/MainPage';
+import { RouteConfig } from 'shared/config/routeConfig/routerConfig';
 
-    console.log()
+export function AppRouter() {
+    console.log();
     return (
         <Suspense fallback={<div>Loading...</div>}>
             <Routes>
@@ -14,10 +14,10 @@ export function AppRouter() {
                     <Route
                         key={route.path}
                         path={route.path}
-                        element={<div className='page-wrapper'>{route.element}</div>}
+                        element={<div className="page-wrapper">{route.element}</div>}
                     />
                 ))}
             </Routes>
         </Suspense>
-    )
+    );
 }
