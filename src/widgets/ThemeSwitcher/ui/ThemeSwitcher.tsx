@@ -1,7 +1,7 @@
 
 import { FC, useState } from "react"
 import DayNightToggle from 'react-day-and-night-toggle'
-import { classNames } from "shared/classNames/classNames"
+import { classNames } from "shared/lib/classNames/classNames"
 import cls from './ThemeSwitcher.module.scss'
 import { useTheme, Theme } from "app/providers/ThemeProvider"
 // props
