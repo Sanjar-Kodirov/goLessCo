@@ -4,7 +4,6 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import cls from './LangSwitcher.module.scss';
 
-
 interface LangSwitcherProps {
     className?: string;
 }
@@ -19,14 +18,14 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
     };
 
     return (
-        <div className='component'>
+        <div className="component">
             <Button
                 className={classNames(cls.LangSwitcher, {}, [className])}
                 theme={ThemeButton.CLEAR}
-                onClick={toggleLanguage}>
+                onClick={toggleLanguage}
+            >
                 {t('Язык')}
             </Button>
         </div>
     );
-}
-
+};
