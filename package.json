@@ -8,7 +8,8 @@
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
     "lint:ts": " eslint \"**/*.{ts,tsx}\"",
-    "lint:ts:fix": " eslint \"**/*.{ts,tsx}\" --fix"
+    "lint:ts:fix": " eslint \"**/*.{ts,tsx}\" --fix",
+    "unit": "jest --config ./config/jest/jest.config.ts"
   },
   "keywords": [],
   "author": "",
@@ -30,6 +31,7 @@
     "eslint-plugin-react": "^7.32.2",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.5.1",
     "mini-css-extract-plugin": "^2.5.3",
     "react-refresh": "^0.12.0",
     "react-refresh-webpack-plugin": "^0.1.0",
