@@ -35,8 +35,16 @@ export default {
 
     // The glob patterns Jest uses to detect test files
     testMatch: [
-        '<rootDir>src/**/ * (*.)@(spec | test).[tj]s ? (x)',
+        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
+
+    // A preset that is used as a base for Jest's configuration
+    // preset: undefined,
+    preset: 'ts-jest',
+    transform: {
+        '^.+\\.(ts|tsx)?$': 'ts-jest',
+        '^.+\\.(js|jsx)$': 'babel-jest',
+    },
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
 
@@ -99,9 +107,6 @@ export default {
 
     // An enum that specifies notification mode. Requires { notify: true }
     // notifyMode: "failure-change",
-
-    // A preset that is used as a base for Jest's configuration
-    // preset: undefined,
 
     // Run tests from one or more projects
     // projects: undefined,
