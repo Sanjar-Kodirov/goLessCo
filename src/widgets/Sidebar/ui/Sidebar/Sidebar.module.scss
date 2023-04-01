@@ -22,3 +22,19 @@
 .lang {
     margin-left: 20px;
 }
+
+.btn {
+    position: absolute;
+    bottom: 20px;
+    right: -40px;
+    width: 40px;
+    height: 40px;
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+    border: none;
+    background: var(--inverted-bg-color);
+    color: var(--secondary-color);
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
