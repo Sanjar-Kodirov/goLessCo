@@ -40,11 +40,7 @@ export default {
 
     // A preset that is used as a base for Jest's configuration
     // preset: undefined,
-    preset: 'ts-jest',
-    transform: {
-        '^.+\\.(ts|tsx)?$': 'ts-jest',
-        '^.+\\.(js|jsx)$': 'babel-jest',
-    },
+
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
 
