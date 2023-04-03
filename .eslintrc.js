@@ -43,6 +43,7 @@ module.exports = {
     'arrow-body-style': 'off',
     'no-multiple-empty-lines': 'off',
     "eol-last": 0,
+    "no-trailing-spaces": 'off',
   },
   globals: {
     __IS_DEV__: true
