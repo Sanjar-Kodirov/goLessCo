@@ -40,7 +40,9 @@ module.exports = {
       ignoreComments: true,
       code: 100
     }],
-    'arrow-body-style': 'off'
+    'arrow-body-style': 'off',
+    'no-multiple-empty-lines': 'off',
+    "eol-last": 0,
   },
   globals: {
     __IS_DEV__: true

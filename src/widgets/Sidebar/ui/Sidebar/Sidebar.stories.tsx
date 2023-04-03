@@ -1,12 +1,8 @@
 // Sidebar.stories.ts|tsx
-
-
-
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-
-import { Sidebar } from './Sidebar';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Sidebar } from './Sidebar';
 
 export default {
     /* 👇 The title prop is optional.

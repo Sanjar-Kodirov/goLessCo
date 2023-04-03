@@ -1,5 +1,5 @@
 /* eslint-disable i18next/no-literal-string */
-import React, { ErrorInfo, ReactNode, Suspense } from 'react';
+import React, { ErrorInfo, Suspense } from 'react';
 import { ErrorPage } from 'widgets/ErrorPage/ErrorPage';
 
 interface ErrorBoundaryProps {
