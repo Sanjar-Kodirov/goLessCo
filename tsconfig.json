@@ -42,6 +42,7 @@
   },
   "include": [
     "./config/jest/setupTests.ts",
-    "./src/**/*"
+    "./src/**/*",
+    "src/shared/config/storybook/StyleDecorator"
   ],
 }
