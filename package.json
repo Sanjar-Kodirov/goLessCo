@@ -9,9 +9,11 @@
     "build:dev": "webpack --env mode=development",
     "lint:ts": " eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": " eslint \"**/*.{ts,tsx}\" --fix",
-    "unit": "jest --config ./config/jest/jest.config.ts",
+    "test:unit": "jest --config ./config/jest/jest.config.ts",
+    "test:ui": "npx loki test",
+    "test:ui:ok": "npx loki approved",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "build-storybook": "build-storybook -c ./config/storybook"
+    "storybook:build": "build-storybook -c ./config/storybook"
   },
   "keywords": [],
   "author": "",
