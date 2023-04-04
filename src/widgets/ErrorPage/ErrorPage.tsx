@@ -18,7 +18,12 @@ export const ErrorPage = ({ className }: ErrorPageProps) => {
     return (
         <div className={classNames(cls.ErrorPage, {}, [className])}>
             <h2>{t('Произошла непредвиденная ошибка')}</h2>
-            <Button className={cls.ErorPageBtn} theme={ButtonTheme.CLEAR} size={ButtonSize.L} onClick={reloadPage}>
+            <Button
+                className={cls.ErorPageBtn}
+                theme={ButtonTheme.CLEAR}
+                size={ButtonSize.L}
+                onClick={reloadPage}
+            >
                 {t('Обновить страницу')}
             </Button>
         </div>

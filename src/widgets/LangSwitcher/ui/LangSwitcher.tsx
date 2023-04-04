@@ -2,8 +2,8 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import translation from 'shared/assets/icons/languages.png';
 import cls from './LangSwitcher.module.scss';
-import translation from 'shared/assets/icons/languages.png'
 
 interface LangSwitcherProps {
     className?: string;
@@ -27,7 +27,8 @@ export const LangSwitcher = ({ className, short }: LangSwitcherProps) => {
                 onClick={toggleLanguage}
             >
                 <div className={cls.lang}>
-                    <img src={translation} alt='icon' /> {t(short ? 'Короткий язык' : 'Язык')}
+                    <img src={translation} alt='icon' />
+                    {t(short ? 'Короткий язык' : 'Язык')}
                 </div>
             </Button>
         </div>
