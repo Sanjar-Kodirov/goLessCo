@@ -1,12 +1,13 @@
-import './styles/index.scss';
+
 
 // use absolute path
+import { Suspense, useState } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from 'app/providers/routes';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { Suspense } from 'react';
 import { classNames } from '../shared/lib/classNames/classNames';
+import { Modal } from 'shared/ui/Modal/Modal';
 
 const App = () => {
     const { theme } = useTheme();
@@ -19,7 +20,6 @@ const App = () => {
                     <AppRouter />
                 </div>
             </Suspense>
-
         </div>
     );
 };

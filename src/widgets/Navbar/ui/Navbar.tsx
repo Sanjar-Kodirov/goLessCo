@@ -1,24 +1,28 @@
+import { useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { useTranslation } from 'react-i18next';
 import cls from './Navbar.module.scss';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
+import { Modal } from 'shared/ui/Modal/Modal';
 
 interface NavbarProps {
     className?: string;
 }
 
 export const Navbar = ({ className }: NavbarProps) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [isAuthModal, setIsAuthModal] = useState(false);
+    const onToggleModal = useCallback(() => {
+        setIsAuthModal((prev) => !prev);
+    }, []);
     const { t } = useTranslation();
     return (
         <div className={classNames(cls.navbar, {}, [className])}>
-            <div className={cls.links}>
-                <AppLink theme={AppLinkTheme.SECONDARY} to="/" className={cls.mainLink}>
-                    {t('Главная')}
-                </AppLink>
-                <AppLink theme={AppLinkTheme.SECONDARY} to="/about">
-                    {t('О сайте')}
-                </AppLink>
-            </div>
-        </div>
+            <Button size={ButtonSize.M} theme={ButtonTheme.CLEAR} onClick={() => setIsOpen(true)} className={cls.links}>{t('Войти')}</Button>
+            <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+                <h3>Modal</h3>
+                <h3>Modal</h3>
+            </Modal>
+        </div >
     );
 };
