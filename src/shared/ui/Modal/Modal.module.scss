@@ -11,8 +11,8 @@
 }
 
 .Modal.dark {
-    --bg-color: #090949;
-    --primary-color: #04ff04;
+    --bg-color: var(--primary-color);
+    --primary-color: var(--inverted-secondary-color);
 }
 
 .overlay {
