@@ -14,7 +14,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react', '@typescript-eslint', 'i18next'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
   rules: {
     'react/jsx-indent': [2, 4],
     'react/jsx-indent-props': [2, 4],
@@ -44,6 +44,8 @@ module.exports = {
     'no-multiple-empty-lines': 'off',
     "eol-last": 0,
     "no-trailing-spaces": 'off',
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "error" // Checks effect dependencies
   },
   globals: {
     __IS_DEV__: true
