@@ -6,8 +6,8 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from 'app/providers/routes';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { classNames } from '../shared/lib/classNames/classNames';
 import { Counter } from 'entities/Counter';
+import { classNames } from '../shared/lib/classNames/classNames';
 
 const App = () => {
     const { theme } = useTheme();
