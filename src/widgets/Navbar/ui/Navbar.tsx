@@ -1,9 +1,9 @@
 import { useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import cls from './Navbar.module.scss';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { Modal } from 'shared/ui/Modal/Modal';
+import cls from './Navbar.module.scss';
 
 interface NavbarProps {
     className?: string;
@@ -18,11 +18,18 @@ export const Navbar = ({ className }: NavbarProps) => {
     const { t } = useTranslation();
     return (
         <div className={classNames(cls.navbar, {}, [className])}>
-            <Button size={ButtonSize.M} theme={ButtonTheme.CLEAR} onClick={() => setIsOpen(true)} className={cls.links}>{t('Войти')}</Button>
+            <Button
+                size={ButtonSize.M}
+                theme={ButtonTheme.CLEAR}
+                onClick={() => setIsOpen(true)}
+                className={cls.links}
+            >
+                {t('Войти')}
+            </Button>
             <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
                 <h3>Modal</h3>
                 <h3>Modal</h3>
             </Modal>
-        </div >
+        </div>
     );
 };
