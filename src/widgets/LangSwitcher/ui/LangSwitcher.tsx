@@ -27,7 +27,7 @@ export const LangSwitcher = ({ className, short }: LangSwitcherProps) => {
                 onClick={toggleLanguage}
             >
                 <div className={cls.lang}>
-                    <img src={translation} alt='icon' />
+                    <img src={translation} alt="icon" />
                     {t(short ? 'Короткий язык' : 'Язык')}
                 </div>
             </Button>

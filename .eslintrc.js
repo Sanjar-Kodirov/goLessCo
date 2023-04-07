@@ -45,7 +45,13 @@ module.exports = {
     "eol-last": 0,
     "no-trailing-spaces": 'off',
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-    "react-hooks/exhaustive-deps": "error" // Checks effect dependencies
+    "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
+    "no-param-reassign": 'off',
+
+    // temporary disabled
+    "i18next/no-literal-string": 'off',
+    "jsx-a11y/click-events-have-key-events": 'off',
+    "jsx-a11y/no-static-element-interactions": 'off',
   },
   globals: {
     __IS_DEV__: true
