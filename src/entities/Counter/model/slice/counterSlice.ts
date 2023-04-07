@@ -1,8 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { CounterSchema } from 'entities/Counter/model/types/couterSchema';
-
+import { CounterSchema } from '../types/CounterSchema';
 // create a slice for the counter with types and reducers
-
 
 const initialState: CounterSchema = {
     value: 0,

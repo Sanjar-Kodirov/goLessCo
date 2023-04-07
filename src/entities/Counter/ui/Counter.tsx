@@ -1,11 +1,10 @@
-import { StateSchema } from "app/providers/StoreProvider/config/StateSchema";
-import { CounterSchema } from "entities/Counter";
-import { counterActions } from "entities/Counter/model/slice/CounterSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { counterActions } from "../model/slice/CounterSlice";
+import { getCounterValue } from "../selectors/getCounterValue/getCounterValue";
 
 export const Counter = () => {
     const dispatch = useDispatch();
-    const counter = useSelector((state: StateSchema) => state.counter.value)
+    const counter = useSelector(getCounterValue)
     console.log(counter)
     const increment = () => {
         dispatch(counterActions.increment())
