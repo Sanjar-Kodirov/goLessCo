@@ -1,6 +1,6 @@
 // create jest test for slice 
 
-import { counterReducer, counterActions } from './CounterSlice';
+import { counterReducer, counterActions } from './counterSlice';
 import { CounterSchema } from '../types/CounterSchema';
 
 describe('counterSlice.test', () => {
