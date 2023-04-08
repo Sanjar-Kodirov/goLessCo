@@ -20,6 +20,13 @@
     min-height: 100vh;
 }
 
+.app,
+.app_modal {
+    font: var(--font-m);
+    color: var(--primary-color);
+}
+
+
 .content-page {
     display: flex;
 }
