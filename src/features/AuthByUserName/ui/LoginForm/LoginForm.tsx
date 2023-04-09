@@ -10,6 +10,8 @@ import { useSelector } from 'react-redux';
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 import { loginByUsername } from '../../model/services/loginByUserName/loginByUserName';
 import { useAppDispatch } from 'app/providers/StoreProvider/config/store';
+import { TextTheme } from 'widgets/Text/Text';
+import { Text } from 'widgets/Text/Text';
 interface LoginFormProps {
     className?: string;
 }
@@ -35,7 +37,7 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
 
     return (
         <div className={classNames(cls.LoginForm, {}, [className])}>
-            {error && <h1>Somthine went wrong</h1>}
+            {error && <Text text={t('Вы ввели неверный логин или пароль')} theme={TextTheme.ERROR} />}
             <Input
                 autofocus
                 type="text"
