@@ -72,3 +72,9 @@ clearInverted {
     // height: 60px;
     font: var(--font-xl);
 }
+
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
