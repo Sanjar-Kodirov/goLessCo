@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { loginActions } from 'features/AuthByUserName/model/slice/loginSlice';
 import { memo, useCallback } from 'react';
 import { useAppDispatch } from 'app/providers/StoreProvider/config/store';
@@ -11,17 +11,17 @@ import { getLoginState } from '../../model/selectors/getLoginState/getLoginState
 import { loginByUsername } from '../../model/services/loginByUserName/loginByUserName';
 import cls from './LoginForm.module.scss';
 
-interface LoginFormProps {
+export interface LoginFormProps {
     className?: string;
 }
 
-export const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className }: LoginFormProps) => {
     const { t } = useTranslation();
 
 
     const dispatch = useAppDispatch();
     const {
-        username, password, isLoading, error, 
+        username, password, isLoading, error,
     } = useSelector(getLoginState);
 
     const onChangeUsername = useCallback((value: string) => {
@@ -66,5 +66,6 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
         </div>
     );
 });
+export default LoginForm;
 
 

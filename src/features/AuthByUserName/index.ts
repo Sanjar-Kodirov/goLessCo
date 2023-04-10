@@ -1,3 +1,4 @@
 export { LoginModal } from './ui/LoginModal/LoginModal';
-export { LoginForm } from './ui/LoginForm/LoginForm';
+import LoginForm from './ui/LoginForm/LoginForm';
+export { LoginForm };
 export { LoginSchema } from './model/types/loginSchema';
