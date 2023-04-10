@@ -9,7 +9,7 @@ const initialState: LoginSchema = {
     username: '',
     password: '',
     error: undefined,
-}
+};
 
 export const loginSlice = createSlice({
     name: 'login',

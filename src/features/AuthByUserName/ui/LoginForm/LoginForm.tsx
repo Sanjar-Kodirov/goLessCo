@@ -2,16 +2,15 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
-import cls from './LoginForm.module.scss';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { loginActions } from 'features/AuthByUserName/model/slice/loginSlice';
 import { memo, useCallback } from 'react';
-import { useSelector } from 'react-redux';
+import { useAppDispatch } from 'app/providers/StoreProvider/config/store';
+import { TextTheme, Text } from 'widgets/Text/Text';
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 import { loginByUsername } from '../../model/services/loginByUserName/loginByUserName';
-import { useAppDispatch } from 'app/providers/StoreProvider/config/store';
-import { TextTheme } from 'widgets/Text/Text';
-import { Text } from 'widgets/Text/Text';
+import cls from './LoginForm.module.scss';
+
 interface LoginFormProps {
     className?: string;
 }
@@ -21,7 +20,9 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
 
 
     const dispatch = useAppDispatch();
-    const { username, password, isLoading, error } = useSelector(getLoginState);
+    const {
+        username, password, isLoading, error, 
+    } = useSelector(getLoginState);
 
     const onChangeUsername = useCallback((value: string) => {
         dispatch(loginActions.setUsername(value));

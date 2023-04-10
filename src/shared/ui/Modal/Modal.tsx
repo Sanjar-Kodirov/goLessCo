@@ -22,7 +22,7 @@ export const Modal = (props: ModalProps) => {
         children,
         isOpen,
         onClose,
-        lazy
+        lazy,
     } = props;
 
     const [isClosing, setIsClosing] = useState(false);

@@ -6,9 +6,9 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from 'app/providers/routes';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { classNames } from '../shared/lib/classNames/classNames';
 import { useAppDispatch } from 'app/providers/StoreProvider/config/store';
 import { userActions } from 'entities/User/model/slice/userSlice';
+import { classNames } from '../shared/lib/classNames/classNames';
 
 const App = () => {
     const { theme } = useTheme();
