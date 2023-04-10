@@ -5,5 +5,5 @@ import { StateSchema } from './config/StateSchema';
 export {
     createReduxStore,
     StoreProvider,
-    StateSchema
+    StateSchema,
 };

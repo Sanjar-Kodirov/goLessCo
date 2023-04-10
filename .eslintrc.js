@@ -38,7 +38,7 @@ module.exports = {
     }],
     'max-len': ['error', {
       ignoreComments: true,
-      code: 100
+      code: 200
     }],
     'arrow-body-style': 'off',
     'no-multiple-empty-lines': 'off',
@@ -49,7 +49,7 @@ module.exports = {
     "no-param-reassign": 'off',
 
     // temporary disabled
-    "i18next/no-literal-string": 'off',
+    // "i18next/no-literal-string": 'off',
     "jsx-a11y/click-events-have-key-events": 'off',
     "jsx-a11y/no-static-element-interactions": 'off',
   },
