@@ -1,10 +1,9 @@
-import { DeepPartial, ReducersMapObject, configureStore } from '@reduxjs/toolkit';
-import { counterReducer } from 'entities/Counter';
+import { ReducersMapObject, configureStore } from '@reduxjs/toolkit';
 import { StateSchema } from './StateSchema';
-import { userReducer } from 'entities/User';
+import { counterReducer } from '../../../../entities/Counter';
+import { userReducer } from '../../../../entities/User';
 import { loginReducer } from 'features/AuthByUserName/model/slice/loginSlice';
 import { useDispatch } from 'react-redux';
-import { ReactNode } from 'react';
 
 export function createReduxStore(initialState?: StateSchema) {
 
