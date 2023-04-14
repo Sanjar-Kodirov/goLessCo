@@ -31,7 +31,7 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
 
     const initialReducers: ReducersList = {
         loginForm: loginReducer,
-    };
+    }; 
 
     const onChangeUsername = useCallback((value: string) => {
         dispatch(loginActions.setUsername(value));
