@@ -5,6 +5,12 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
 
+
+const options = {
+    analyzerMode: 'static',
+    analyzerOutput: 'report.html',
+    openAnalyzer: true,
+};
 export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
     const plugins = [
         new HTMLWebpackPlugin({
@@ -22,10 +28,15 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
 
     if (isDev) {
         plugins.push(new webpack.HotModuleReplacementPlugin());
-        plugins.push(new BundleAnalyzerPlugin({
-            openAnalyzer: false,
-        }));
+        // plugins.push(new BundleAnalyzerPlugin({
+        //     // openAnalyzer: true,
+        // }));
     }
+
+    plugins.push(new BundleAnalyzerPlugin({
+        openAnalyzer: true,
+    }));
+
 
     return plugins;
 }
