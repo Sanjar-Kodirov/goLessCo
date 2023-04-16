@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, memo } from 'react';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { LangSwitcher } from 'widgets/LangSwitcher';
@@ -6,8 +6,6 @@ import { Button, ButtonTheme, ButtonSize } from 'shared/ui/Button/Button';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { useTranslation } from 'react-i18next';
 import { RoutePath } from 'shared/config/routeConfig/routerConfig';
-import MainIcon from 'shared/assets/icons/main-20-20.svg';
-import AboutIcon from 'shared/assets/icons/about-20-20.svg';
 import cls from './Sidebar.module.scss';
 import { SidebarItemsList } from '../../model/items';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
@@ -15,7 +13,7 @@ interface SidebarProps {
     className?: string;
 }
 
-export const Sidebar = ({ className }: SidebarProps) => {
+export const Sidebar = memo(({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
     const { t } = useTranslation();
 
@@ -58,4 +56,4 @@ export const Sidebar = ({ className }: SidebarProps) => {
             </div>
         </div>
     );
-};
+});

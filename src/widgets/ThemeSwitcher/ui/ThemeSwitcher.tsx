@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, memo, useState } from 'react';
 import DayNightToggle from 'react-day-and-night-toggle';
 import { useTheme, Theme } from 'app/providers/ThemeProvider';
 // props
@@ -10,7 +10,7 @@ interface ThemeSwitcherProps {
     theme: string;
 }
 
-export const ThemeSwitcher: FC = () => {
+export const ThemeSwitcher: FC = memo(() => {
     const { theme, toggleTheme } = useTheme();
     const [isDarkMode, setIsDarkMode] = useState(theme !== Theme.LIGHT);
 
@@ -32,4 +32,4 @@ export const ThemeSwitcher: FC = () => {
             animationInactive={false}
         />
     );
-};
+});
