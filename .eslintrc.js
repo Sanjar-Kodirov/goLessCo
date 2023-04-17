@@ -54,7 +54,8 @@ module.exports = {
     "jsx-a11y/no-static-element-interactions": 'off',
   },
   globals: {
-    __IS_DEV__: true
+    __IS_DEV__: true,
+    __API__: true
   },
   overrides: [
     {

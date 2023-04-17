@@ -5,10 +5,13 @@ import { loginReducer } from 'features/AuthByUserName/model/slice/loginSlice';
 import { useDispatch } from 'react-redux';
 import { StateSchema } from './StateSchema';
 import { createReducerManager } from './reducerManager';
+import { $api } from 'shared/api/api';
+import { To, NavigateOptions } from 'react-router-dom';
 
 export function createReduxStore(
     initialState?: StateSchema,
-    asyncReducers?: ReducersMapObject<StateSchema>) {
+    asyncReducers?: ReducersMapObject<StateSchema>,
+    navigate?: (to: To, options?: NavigateOptions) => void) {
 
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
@@ -19,10 +22,18 @@ export function createReduxStore(
 
     const reducerManager = createReducerManager(rootReducers)
 
-    const store = configureStore<StateSchema>({
+    const store = configureStore({
         reducer: reducerManager.reduce,
         devTools: __IS_DEV__,
         preloadedState: initialState,
+        middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+            thunk: {
+                extraArgument: {
+                    api: $api,
+                    navigate: navigate
+                }
+            }
+        }),
     });
 
     // @ts-ignore
