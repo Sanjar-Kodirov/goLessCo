@@ -12,14 +12,12 @@ export default ({ config }: { config: webpack.Configuration }) => {
     };
 
     // @ts-ignore
-
-    config.resolve.modules.push(paths.src);
+    config!.resolve!.modules.push(paths.src);
     // @ts-ignore
-    config.resolve.extensions.push('.ts', '.tsx');
-
+    config!.resolve!.extensions.push('.ts', '.tsx');
 
     // @ts-ignore
-    config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
+    config!.module!.rules = config!.module!.rules.map((rule: RuleSetRule) => {
         if (/svg/.test(rule.test as string)) {
             return { ...rule, exclude: /\.svg$/i };
         }
@@ -28,15 +26,12 @@ export default ({ config }: { config: webpack.Configuration }) => {
     });
 
 
-    // @ts-ignore
-    config.module.rules.push({
+    config!.module!.rules.push({
         test: /\.svg$/,
         use: ['@svgr/webpack'],
     });
-    // @ts-ignore
-    config.module.rules.push(buildCssLoader(true));
-    // @ts-ignore
-    config.resolve.modules = [
+    config!.module!.rules.push(buildCssLoader(true));
+    config!.resolve!.modules = [
         path.resolve(__dirname, '../../src'),
         'node_modules',
     ];

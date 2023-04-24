@@ -62,18 +62,3 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
         }
     }
 }
-
-// const staticReducers = {
-//     users: usersReducer,
-//     posts: postsReducer
-// }
-
-// export function configureStore(initialState) {
-//     const reducerManager = createReducerManager(staticReducers)
-
-//     // Create a store with the root reducer function being the one exposed by the manager.
-//     const store = createStore(reducerManager.reduce, initialState)
-
-//     // Optional: Put the reducer manager on the store so it is easily accessible
-//     store.reducerManager = reducerManager
-// } 
